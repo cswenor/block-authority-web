@@ -2,12 +2,14 @@ import "./globals.css"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
+import { Metadata, Viewport } from "next"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: "Block Authority - Enterprise Blockchain Solutions",
     template: "%s | Block Authority"
@@ -57,6 +59,13 @@ export const metadata = {
   }
 }
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" }
+  ]
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -82,6 +91,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
