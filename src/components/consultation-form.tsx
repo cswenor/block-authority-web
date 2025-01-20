@@ -19,7 +19,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { toast } from "sonner"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Loader2 } from "lucide-react"
-import { useRouter } from 'next/navigation'
 import { consultationFormSchema } from "@/lib/schema"
 import type { ConsultationFormValues } from "@/lib/schema"
 
@@ -31,7 +30,6 @@ export function ConsultationForm({ defaultType = "other" }: ConsultationFormProp
   const [isLoading, setIsLoading] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const router = useRouter()
 
   const form = useForm<ConsultationFormValues>({
     resolver: zodResolver(consultationFormSchema),
@@ -80,7 +78,7 @@ export function ConsultationForm({ defaultType = "other" }: ConsultationFormProp
       <Alert className="bg-green-50 border-green-200">
         <AlertTitle className="text-green-800">Thank you for your submission!</AlertTitle>
         <AlertDescription className="text-green-700">
-          We've received your consultation request and will be in touch within 24 hours.
+          We&apos;ve received your consultation request and will be in touch within 24 hours.
           In the meantime, if you have any questions, feel free to contact us directly (help@blockauthority.com).
         </AlertDescription>
       </Alert>

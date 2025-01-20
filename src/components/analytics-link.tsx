@@ -7,7 +7,7 @@ import { clientAnalytics as analytics } from "@/lib/analytics/client"
 interface AnalyticsLinkProps {
   href: string
   eventName: string
-  eventData?: Record<string, any>
+  eventData?: Record<string, string | number | boolean>
   children: ReactNode
   className?: string
 }
