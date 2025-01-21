@@ -1,7 +1,41 @@
 export function CaseStudyHero() {
     return (
-      <section className="border-b bg-muted/50">
-        <div className="container py-20 lg:py-32">
+      <section className="relative border-b bg-muted/50 overflow-hidden">
+        {/* Background SVG */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-10 md:opacity-20">
+          <svg
+            width="300"
+            height="300"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-primary w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[600px] lg:h-[600px]"
+          >
+            {/* Chart-like elements */}
+            <path d="M3 3v18h18" />
+            
+            {/* Rising steps representing success/growth */}
+            <path d="M6 15l4-4 4 4 4-4" />
+            
+            {/* Success indicators */}
+            <circle cx="6" cy="15" r="1" className="fill-primary/10" />
+            <circle cx="10" cy="11" r="1" className="fill-primary/10" />
+            <circle cx="14" cy="15" r="1" className="fill-primary/10" />
+            <circle cx="18" cy="11" r="1" className="fill-primary/10" />
+            
+            {/* Additional metric visualization elements */}
+            <path d="M6 18v-6" strokeDasharray="2 2" />
+            <path d="M10 18v-10" strokeDasharray="2 2" />
+            <path d="M14 18v-6" strokeDasharray="2 2" />
+            <path d="M18 18v-10" strokeDasharray="2 2" />
+          </svg>
+        </div>
+  
+        {/* Content */}
+        <div className="container relative py-20 lg:py-32">
           <div className="flex flex-col gap-8 lg:gap-12">
             <div className="space-y-4">
               <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
