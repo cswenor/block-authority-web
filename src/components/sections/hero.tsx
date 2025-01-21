@@ -1,4 +1,4 @@
-// components/sections/hero.tsx
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
@@ -19,17 +19,23 @@ export function Hero() {
         </div>
         <div className="flex flex-wrap gap-4">
           <Button
+            asChild
             size="lg"
             className="rounded-full bg-primary hover:bg-primary/90"
           >
-            Schedule a Consultation
+            <Link href="/consultation">
+              Schedule a Consultation
+            </Link>
           </Button>
           <Button
+            asChild
             variant="outline"
             size="lg"
             className="rounded-full"
           >
-            View Our Work
+            <Link href="/case-studies">
+              View Our Work
+            </Link>
           </Button>
         </div>
       </div>

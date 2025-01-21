@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
@@ -12,12 +13,16 @@ export function CTA() {
           Schedule a consultation to discuss how blockchain can revolutionize your operations.
         </p>
         <div className="flex flex-col gap-2 sm:flex-row sm:gap-4">
-          <Button size="lg" className="gap-2">
-            Schedule a Consultation
-            <ArrowRight className="h-4 w-4" />
+          <Button asChild size="lg" className="gap-2">
+            <Link href="/consultation">
+              Schedule a Consultation
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </Button>
-          <Button size="lg" variant="outline">
-            Download Resources
+          <Button asChild size="lg" variant="outline">
+            <Link href="/case-studies">
+              View Case Studies
+            </Link>
           </Button>
         </div>
       </div>

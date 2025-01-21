@@ -18,17 +18,16 @@ export function Navbar() {
             <Link href="/case-studies" className="text-sm hover:text-primary">
               Case Studies
             </Link>
-            <Link href="/contact" className="text-sm hover:text-primary">
-              Contact
-            </Link>
             <Link href="/services" className="text-sm hover:text-primary">
               Services
             </Link>
           </nav>
         </div>
         <div className="flex items-center gap-4">
-          <Button variant="default" className="bg-primary hover:bg-primary/90">
-            Get Started
+          <Button asChild variant="default" className="hidden md:inline-flex">
+            <Link href="/consultation">
+              Get Started
+            </Link>
           </Button>
           <ThemeToggle />
         </div>
